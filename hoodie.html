@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abobus Store</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+    <header>
+        <div class="logo">abobus</div>
+        <div class="header-menu">
+            <a href="#" id="contacts">Contacts</a>
+            <a href="#" id="login">Login</a>
+            <select id="language-switcher">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+            </select>
+            <a href="#" class="heart">&#10084;</a>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <ul id="categories">
+                <li><a href="abobus.html">T-shirt</a></li>
+                <li><a href="hoodie.html">Hoodie</a></li>
+                <li><a href="paint.html">Paint</a></li>
+                <li><a href="boots.html">Boots</a></li>
+                <li><a href="hat.html">Hat</a></li>
+            </ul>
+        </aside>
+
+        <div class="slider">
+            <button class="prev">❮</button>
+            <div class="slides-wrapper">
+                <div class="slides">
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/196417443/detail.aspx">
+                        <img src="https://basket-13.wbbasket.ru/vol1964/part196417/196417443/images/c246x328/1.webp" alt="photo 1">
+                        </a>
+                        <div class="price">$25</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/179241245/detail.aspx?targetUrl=MS&size=296524039">
+                        <img src="https://basket-12.wbbasket.ru/vol1792/part179241/179241245/images/c246x328/1.webp" alt="photo 2">
+                        </a>
+                        <div class="price">$50</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/179241243/detail.aspx?targetUrl=MS&size=296524029">
+                        <img src="https://basket-12.wbbasket.ru/vol1792/part179241/179241243/images/c246x328/2.webp" alt="photo 3">
+                        </a>
+                        <div class="price">$75</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/179241246/detail.aspx?targetUrl=MS&size=296524044">
+                        <img src="https://basket-12.wbbasket.ru/vol1792/part179241/179241246/images/c246x328/1.webp" alt="photo 4">
+                        </a>
+                        <div class="price">$100</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/190208440/detail.aspx?targetUrl=MS">
+                        <img src="https://basket-12.wbbasket.ru/vol1902/part190208/190208440/images/c246x328/2.webp" alt="photo 5"> 
+                        </a>
+                        <div class="price">$125</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/195597434/detail.aspx?targetUrl=MS">
+                        <img src="https://basket-13.wbbasket.ru/vol1955/part195597/195597434/images/c246x328/1.webp" alt="photo 7">
+                        </a>
+                        <div class="price">$40</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/179437240/detail.aspx?targetUrl=MS">
+                        <img src="https://basket-12.wbbasket.ru/vol1794/part179437/179437240/images/c246x328/1.webp" alt="photo 6">
+                        </a>
+                        <div class="price">$30</div>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.wildberries.ru/catalog/168947243/detail.aspx?targetUrl=SG">
+                        <img src="https://basket-12.wbbasket.ru/vol1689/part168947/168947243/images/c246x328/19.webp" alt="photo 8">
+                        </a>
+                        <div class="price">$55</div></div>
+                    </div>
+                </div>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    
+        <script>
+            let slideIndex = 0;
+            const slidesWrapper = document.querySelector('.slides');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            const slideWidth = 250; 
+            const slideMargin = 10; 
+            let slides = document.querySelectorAll('.slide'); 
+        
+            function updateSliderWidth() {
+                slidesWrapper.style.width = (slideWidth + slideMargin) * slides.length + 'px';
+            }
+        
+            updateSliderWidth(); 
+        
+            function nextSlide() {
+                slidesWrapper.appendChild(slides[0]);
+                slidesWrapper.style.transform = 'translateX(0)';
+                slides = document.querySelectorAll('.slide');
+            }
+        
+            function prevSlide() {
+                slidesWrapper.insertBefore(slides[slides.length - 1], slides[0]);
+                slidesWrapper.style.transform = 'translateX(0)';
+                slides = document.querySelectorAll('.slide');
+            }
+        
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+        </script>
+    </body>
+    </html>
